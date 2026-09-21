@@ -2,12 +2,13 @@ import streamlit as st
 
 st.set_page_config(page_title="EnvelopeCalcs", layout="wide")
 
-# CSS snippet to hide footer, hamburger menu, and header bar
+# Updated CSS targeting Streamlit's new element attributes
 hide_streamlit_style = """
             <style>
             #MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
-            header {visibility: hidden;}
+            [data-testid="stHeader"] {visibility: hidden;}
+            [data-testid="stFooter"] {display: none !important;}
+            footer {display: none !important;}
             </style>
             """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
